@@ -24,3 +24,5 @@ java.time.temporal包：这个包包含一些时态对象，我们可以用其�
 java.time.zone包：这个包包含支持不同时区以及相关规则的类
 
 $ cat 1000_log_pre | sort | uniq | awk -F '\t' '{print $1}' | sort | uniq -c | sort -nr -k1|  head
+
+对于MapReduce任务而言，一般卡主在最后Reduce任务上，很大可能是由于发生了数据倾斜造成对。
