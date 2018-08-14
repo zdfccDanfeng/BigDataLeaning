@@ -23,3 +23,4 @@ java.time.temporal包：这个包包含一些时态对象，我们可以用其�
 比如说，可以找到某月的第一天或最后一天。你可以非常容易地认出这些方法，因为它们都具有“withXXX”的格式。
 java.time.zone包：这个包包含支持不同时区以及相关规则的类
 
+$ cat 1000_log_pre | sort | uniq | awk -F '\t' '{print $1}' | sort | uniq -c | sort -nr -k1|  head
