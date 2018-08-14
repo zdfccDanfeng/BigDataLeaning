@@ -26,3 +26,6 @@ java.time.zone包：这个包包含支持不同时区以及相关规则的类
 $ cat 1000_log_pre | sort | uniq | awk -F '\t' '{print $1}' | sort | uniq -c | sort -nr -k1|  head
 
 对于MapReduce任务而言，一般卡主在最后Reduce任务上，很大可能是由于发生了数据倾斜造成对。
+假设原始任务的Input个数为M,output个数为N。Mapper的个数为P，Reducer的个数为R。则有关系，M〉P〉N〉R。也就是说，一个Mapper要做M/P个input的处理任务，一个Reducer要做N/R个output的汇总工作。每个output有一个编号，假设为o1,o2,o3…oN。当一个Mapper处理完自己那一份儿input之后，每个input i被处理后转化为一个中间结果m。这个m很自然地会若干output
+(如：m1对应o1,o3,o5) 会有贡献。每个Reducer负责一个或多个o的汇总处理。假如某个Reducer负责o1,o2,o3,那么凡是对应到o1,o2,o3的被处理过的m都会传给这个Reducer做汇总处理。
+
