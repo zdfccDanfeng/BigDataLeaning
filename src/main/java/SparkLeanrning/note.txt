@@ -1,0 +1,33 @@
+spark学习
+
+
+1.数据分片和路由 ：一致性哈希算法
+
+2。备份机制和一致性
+
+3。CAP
+
+4. 幂等性  分布式系统状态管理的基础
+
+5。一致性
+
+6。备份机制 leader-follower
+
+7.共识机制  paxos raft
+
+8.lsm 对比B+树
+
+9。布隆过滤器
+
+10。spark / flink
+
+11.hdfs
+12.yarn
+
+13.zookeeper
+
+14.redis
+
+15.hbase
+
+16.kafaka
