@@ -60,6 +60,12 @@
             <version>${spark.version}</version>
             <scope>provided</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.twitter/util-core -->
+        <dependency>
+            <groupId>com.twitter</groupId>
+            <artifactId>util-core_2.12</artifactId>
+            <version>18.8.0</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-sql_2.11</artifactId>

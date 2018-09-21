@@ -29,3 +29,60 @@ $ cat 1000_log_pre | sort | uniq | awk -F '\t' '{print $1}' | sort | uniq -c | s
 假设原始任务的Input个数为M,output个数为N。Mapper的个数为P，Reducer的个数为R。则有关系，M〉P〉N〉R。也就是说，一个Mapper要做M/P个input的处理任务，一个Reducer要做N/R个output的汇总工作。每个output有一个编号，假设为o1,o2,o3…oN。当一个Mapper处理完自己那一份儿input之后，每个input i被处理后转化为一个中间结果m。这个m很自然地会若干output
 (如：m1对应o1,o3,o5) 会有贡献。每个Reducer负责一个或多个o的汇总处理。假如某个Reducer负责o1,o2,o3,那么凡是对应到o1,o2,o3的被处理过的m都会传给这个Reducer做汇总处理。
 
+
+
+HashMap和LinkedHashMap，TreeMap的区别
+
+LinkedHashMap 是 HashMap 的一个子类，它保留插入的顺序，如果需要输出的顺序和
+
+输入时的相同，那么就选用 LinkedHashMap。
+LinkedHashMap 是 Map 接口的哈希表和链接列表实现，具有可预知的迭代顺序。此实现
+
+提供所有可选的映射操作，并允许使用 null 值和 null 键。此类不保证映射的顺序，特别是它不保
+
+证该顺序恒久不变。
+
+         LinkedHashMap 实现与 HashMap 的不同之处在于，后者维护着一个运行于所有条目的双
+
+重链接列表。此链接列表定义了迭代顺序，该迭代顺序可以是插入顺序或者是访问顺序.
+
+重新定义了数组中保存的元素Entry（继承于HashMap.Entry)，该Entry除了保存当前对象的引用外，还保存了其上一个元素before和下一个元素after的引用，
+从而在哈希表的基础上又构成了双向链接列表。仍然保留next属性，所以既可像HashMap一样快速查找，用next获取该链表下一个Entry，
+也可以通过双向链接，通过after完成所有数据的有序迭代。
+accessOrder为true时，按访问顺序排序，false时，按插入顺序排序。默认false，
+基于Linked的访问顺序特性，可以实现LRU算法。jodd.cache.LRUCache
+
+ public LruCache(final int maxSize, float loadFactor, boolean accessOrder) {
+        int initialCapacity = Math.round((float)maxSize / loadFactor);
+        this.cacheMap = new LinkedHashMap<K, V>(initialCapacity, loadFactor, accessOrder) {
+            public boolean removeEldestEntry(Entry<K, V> eldest) {
+                boolean result = this.size() > maxSize;
+                if (result && LruCache.LOG.isDebugEnabled()) {
+                    LruCache.LOG.debug("Removing eldest entry in cache: " + eldest.getKey());
+                }
+
+                return result;
+            }
+        };
+    }
+ 此实现不是同步的。如果多个线程同时访问链接的哈希映射，而其中至少一个线程从结
+
+ 构上修改了该映射，则它必须保持外部同步。
+ 根据链表中元素的顺序可以分为：按插入顺序的链表，和按访问顺序 (调用 get 方法) 的链表。
+ 默认是按插入顺序排序，如果指定按访问顺序排序，那么调用 get 方法后，会将这次访问的元素
+
+ 移至链表尾部，不断访问可以形成按访问顺序排序的链表。  可以重写 removeEldestEntry 方法返
+
+ 回 true 值指定插入元素时移除最老的元素。。
+
+TreeMap可以按照键值顺序返回Map结构，TreeMap底层基于红黑树进行实现，使用红黑树的好处是能够使得树具有不错的平衡性，这样操作的速度就可以达到log(n)的水平了。
+TreeMap的put操作：
+  如果存在的话，old value被替换；如果不存在的话，则新添一个节点，然后对做红黑树的平衡操作
+  get函数则相对来说比较简单，以log(n)的复杂度进行get
+
+
+
+
+#####如何控制多个线程一起开始执行：
+
+

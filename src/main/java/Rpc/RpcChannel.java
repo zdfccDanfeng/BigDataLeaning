@@ -9,10 +9,15 @@ package Rpc;
 // 去处理对应的线程，同时它也要负责调用RpcCallback接口定义的相关的方法，
 // 例如响应请求的replyRequest方法和处理残留的响应leftOver方法，残留响应是指有时我们在接收到第一个响应后就唤起线程。
 
+import java.io.Serializable;
 import java.nio.channels.Channel;
+import java.util.Arrays;
 import java.util.HashMap;
 
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
+import io.netty.channel.ChannelException;
+import sun.rmi.rmic.iiop.CompoundType;
 
 public class RpcChannel implements ChannelListener {
     private Channel channel;
@@ -28,7 +33,7 @@ public class RpcChannel implements ChannelListener {
         channel.addChannelListener(this);
     }
 
-    public RpcResponse[] send(Member[] destination, Serializable message, int rpcOptions,
+    public RpcResponse[] send(CompoundType.Member[] destination, Serializable message, int rpcOptions,
                               int channelOptions, long timeout) throws ChannelException {
         int sendOptions = channelOptions & ~Channel.SEND_OPTIONS_SYNCHRONIZED_ACK;
         byte[] key = ObjectIdGenerators.UUIDGenerator.randomUUID(false);
@@ -49,7 +54,7 @@ public class RpcChannel implements ChannelListener {
     }
 
     @Override
-    public void messageReceived(Serializable msg, Member sender) {
+    public void messageReceived(Serializable msg, CompoundType.Member sender) {
         RpcMessage rmsg = (RpcMessage) msg;
         byte[] key = rmsg.uuid;
         if (rmsg.reply) {
@@ -72,14 +77,14 @@ public class RpcChannel implements ChannelListener {
             rmsg.reply = true;
             rmsg.message = reply;
             try {
-                channel.send(new Member[] {sender}, rmsg,
+                channel.send(new CompoundType.Member[] {sender}, rmsg,
                         replyMessageOptions & ~Channel.SEND_OPTIONS_SYNCHRONIZED_ACK);
             } catch (Exception x) {}
         }
     }
 
     @Override
-    public boolean accept(Serializable msg, Member sender) {
+    public boolean accept(Serializable msg, CompoundType.Member sender) {
         if (msg instanceof RpcMessage) {
             RpcMessage rmsg = (RpcMessage) msg;
             return Arrays.equals(rmsg.rpcId, rpcId);
