@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e38c3c2-a6a4-41a3-9414-8033e72b6cb4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/范型序列化/GsonDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/FiltterWords/FilterWords.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Rpc/RpcChannel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Rpc/RpcChannel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/java8/java8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/java8/java8.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SparkLeanrning/Job/GroupTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SparkLeanrning/Job/GroupTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -86,7 +83,7 @@
       <file leaf-file-name="RpcMessage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Rpc/RpcMessage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="507">
+            <state relative-caret-position="666">
               <caret line="43" column="33" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -116,18 +113,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GsonDemo.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GsonDemo.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/范型序列化/GsonDemo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-189">
+            <state relative-caret-position="18">
               <caret line="55" column="9" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5493#5494#0" expanded="true" />
-                <element signature="e#5526#5527#0" expanded="true" />
-                <element signature="e#5564#5565#0" expanded="true" />
-                <element signature="e#5600#5601#0" expanded="true" />
                 <marker date="1539188050017" expanded="true" signature="1405:1765" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FilterWords.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/FiltterWords/FilterWords.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -136,8 +141,8 @@
       <file leaf-file-name="RpcChannel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Rpc/RpcChannel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="73" column="15" lean-forward="true" selection-end-line="94" />
+            <state relative-caret-position="1314">
+              <caret line="73" column="15" selection-end-line="94" />
             </state>
           </provider>
         </entry>
@@ -145,17 +150,8 @@
       <file leaf-file-name="java8.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/java8/java8.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="681">
+            <state relative-caret-position="1620">
               <caret line="90" column="25" selection-start-line="90" selection-start-column="25" selection-end-line="90" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LinkedHashMap.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home/src.zip!/java/util/LinkedHashMap.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2448">
-              <caret line="162" column="13" selection-start-line="162" selection-start-column="13" selection-end-line="162" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -164,7 +160,7 @@
         <entry file="jar://$USER_HOME$/zhangdanfengmavenres/org/jodd/jodd-core/3.5.2/jodd-core-3.5.2.jar!/jodd/cache/AbstractCacheMap.class">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="900">
-              <caret line="66" column="5" lean-forward="true" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
+              <caret line="66" column="5" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -216,6 +212,7 @@
         <option value="$PROJECT_DIR$/src/main/java/范型序列化/hh.java" />
         <option value="$PROJECT_DIR$/src/main/java/范型序列化/GsonDEmo.java" />
         <option value="$PROJECT_DIR$/src/main/java/范型序列化/GsonDemo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FiltterWords/FilterWords.java" />
       </list>
     </option>
   </component>
@@ -273,7 +270,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -305,28 +301,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="范型序列化" type="462c0819:PsiDirectoryNode" />
+              <item name="FiltterWords" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Learning" type="b2602c69:ProjectViewProjectNode" />
               <item name="Learning" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Learning" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Learning" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Learning" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Learning" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Job" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Learning" type="b2602c69:ProjectViewProjectNode" />
@@ -337,6 +318,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -382,9 +364,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.GsonDemo">
+  <component name="RunManager" selected="Application.FilterWords">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+    </configuration>
+    <configuration name="FilterWords" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="FiltterWords.FilterWords" />
+      <module name="Learning" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="FiltterWords.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
     </configuration>
     <configuration name="GroupByTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="java8.GroupByTest" />
@@ -492,9 +485,11 @@
       <item itemvalue="JUnit.GroupTestTest.testGroup" />
       <item itemvalue="Application.GroupByTest" />
       <item itemvalue="Application.GsonDemo" />
+      <item itemvalue="Application.FilterWords" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.FilterWords" />
         <item itemvalue="Application.GsonDemo" />
         <item itemvalue="Application.GroupByTest" />
         <item itemvalue="JUnit.GroupTestTest.testGroup" />
@@ -524,7 +519,8 @@
       <workItem from="1536913317606" duration="926000" />
       <workItem from="1537498626777" duration="77000" />
       <workItem from="1537498740953" duration="4455000" />
-      <workItem from="1539184365301" duration="3067000" />
+      <workItem from="1539184365301" duration="3272000" />
+      <workItem from="1539345595347" duration="1679000" />
     </task>
     <servers />
   </component>
@@ -558,10 +554,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29999000" />
+    <option name="totallyTimeSpent" value="31883000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -572,24 +568,24 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32969698" />
       <window_info anchor="right" id="Maven Projects" order="3" weight="0.3297568" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5478788" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.31151515" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5478788" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.4025641" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.40242425" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.0" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.33476394" />
       <window_info anchor="right" id="Bean Validation" order="3" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32969698" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="UI Designer" order="2" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32969698" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -637,13 +633,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/java8/java8.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/zhangdanfengmavenres/com/twitter/util-core_2.12/18.8.0/util-core_2.12-18.8.0-sources.jar!/com/twitter/util/Future.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="37860">
@@ -934,21 +923,21 @@
     <entry file="jar://$USER_HOME$/zhangdanfengmavenres/org/jodd/jodd-core/3.5.2/jodd-core-3.5.2.jar!/jodd/cache/AbstractCacheMap.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="900">
-          <caret line="66" column="5" lean-forward="true" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
+          <caret line="66" column="5" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/java8/java8.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="681">
+        <state relative-caret-position="1620">
           <caret line="90" column="25" selection-start-line="90" selection-start-column="25" selection-end-line="90" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Rpc/RpcChannel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="73" column="15" lean-forward="true" selection-end-line="94" />
+        <state relative-caret-position="1314">
+          <caret line="73" column="15" selection-end-line="94" />
         </state>
       </provider>
     </entry>
@@ -964,7 +953,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Rpc/RpcMessage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
+        <state relative-caret-position="666">
           <caret line="43" column="33" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1001,15 +990,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/范型序列化/GsonDemo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-189">
+        <state relative-caret-position="18">
           <caret line="55" column="9" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5493#5494#0" expanded="true" />
-            <element signature="e#5526#5527#0" expanded="true" />
-            <element signature="e#5564#5565#0" expanded="true" />
-            <element signature="e#5600#5601#0" expanded="true" />
             <marker date="1539188050017" expanded="true" signature="1405:1765" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FiltterWords/FilterWords.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
