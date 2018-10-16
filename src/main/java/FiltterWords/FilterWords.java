@@ -6,31 +6,62 @@ package FiltterWords;
 import java.io.File;
 import java.io.IOException;
 import java.text.NumberFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
 import java.util.Locale;
-
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 import org.apache.commons.io.FileUtils;
-
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class FilterWords {
 
+    /**
+     *  xx
+     *  xx1
+     *  xxoowoxx1xx1xx1
+     *  ....
+     *  ....
+     *
+     *  ...
+     *  xx2
+     *  xx2dkwek
+     *  xx2..we.,xx2
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     * @param args
+     */
     public static void main(String [] args){
 
         String content=readfile("/Users/zhangdanfeng01/Desktop/newjia_dian.txt");
-
+       Collection<String> target= Arrays.stream(content.split("\n")).sorted().distinct().collect(Collectors.toList());
         // 基于文本相似性进行过滤
-        Arrays.stream(content.split("\n")).sorted()
-        .filter(s -> {
-           return true;
-        });
+     //   FilterTool<String,String> filterTool=filterTools(target,(s)->s);
+        List<Predicate<String>> predicates=new ArrayList<>();
+        FilterTool<String,String> filterTool=FilterTool.filterTools(target,);
+        filterTool.
     }
 
+    public static Predicate<String> limitPredicate(String s){
+        return s1->s1.length()>=6;
+    }
 
+    public static Predicate<String> limtiEnglish(String s){
+     String s1= removeSign(s);
+     StringBuilder stringBuilder=new StringBuilder();
+     for (char e:s1.toCharArray()){
 
-
-
+     }
+    }
     public static String readfile(String path){
         File file =FileUtils.getFile(path);
         try {
@@ -87,7 +118,8 @@ public class FilterWords {
         char[] result = new char[matrix[m][n]];
         int currentIndex = result.length - 1;
         while (matrix[m][n] != 0) {
-            if (matrix[n] == matrix[n - 1])
+            //System.out.println(n+"  m"+matrix.length+"  n"+matrix[0].length);
+            if (matrix[m][n] == matrix[m][n - 1])
                 n--;
             else if (matrix[m][n] == matrix[m - 1][n])
                 m--;
