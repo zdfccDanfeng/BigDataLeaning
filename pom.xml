@@ -7,7 +7,7 @@
     <packaging>jar</packaging>
     <url>http://maven.apache.org</url>
     <name>${project.artifactId}</name>
-    <description>手百开屏spark计算任务</description>
+    <description>临时计算</description>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -28,48 +28,14 @@
             </activation>
             <properties>
                 <!--
-                    v1.2.5, 升级厂内2.1.0.4-baidu-SNAPSHOT版本; SparkContext初始化过程中，使用baas认证，MacOS无法运行Junit Test;
-                    所以, 通过使用社区版解决
                 -->
                 <spark.version>2.2.1</spark.version>
-                <flink.version>1.7-SNAPSHOT</flink.version>
             </properties>
             <dependencies>
                 <dependency>
                     <groupId>org.apache.spark</groupId>
                     <artifactId>spark-core_${scala.binary.version}</artifactId>
                     <version>${spark.version}</version>
-                </dependency>
-                <dependency>
-                    <groupId>org.apache.flink</groupId>
-                    <artifactId>flink-java</artifactId>
-                    <version>${flink.version}</version>
-                </dependency>
-                <dependency>
-                    <groupId>org.apache.flink</groupId>
-                    <artifactId>flink-streaming-java_2.11</artifactId>
-                    <version>${flink.version}</version>
-                </dependency>
-                <dependency>
-                    <groupId>org.apache.flink</groupId>
-                    <artifactId>flink-clients_2.11</artifactId>
-                    <version>${flink.version}</version>
-                </dependency>
-                <dependency>
-                    <groupId>org.apache.flink</groupId>
-                    <artifactId>flink-connector-wikiedits_2.11</artifactId>
-                    <version>${flink.version}</version>
-                </dependency>
-                <dependency>
-                    <groupId>org.apache.flink</groupId>
-                    <artifactId>flink-examples</artifactId>
-                    <version>1.7-SNAPSHOT</version>
-                </dependency>
-                <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
-                <dependency>
-                    <groupId>org.apache.commons</groupId>
-                    <artifactId>commons-lang3</artifactId>
-                    <version>3.8.1</version>
                 </dependency>
             </dependencies>
         </profile>
@@ -92,11 +58,11 @@
             <version>${spark.version}</version>
             <scope>provided</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.twitter/util-core -->
+        <!-- https://mvnrepository.com/artifact/net.sourceforge.jexcelapi/jxl -->
         <dependency>
-            <groupId>com.twitter</groupId>
-            <artifactId>util-core_2.12</artifactId>
-            <version>18.8.0</version>
+            <groupId>net.sourceforge.jexcelapi</groupId>
+            <artifactId>jxl</artifactId>
+            <version>2.6.12</version>
         </dependency>
         <dependency>
             <groupId>org.apache.spark</groupId>
@@ -177,6 +143,41 @@
             <groupId>com.101tec</groupId>
             <artifactId>zkclient</artifactId>
             <version>0.10</version>
+        </dependency>
+        <dependency>
+            <groupId>com.twitter</groupId>
+            <artifactId>util-core_2.12</artifactId>
+            <version>18.8.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-sql_2.11</artifactId>
+            <version>${spark.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-hive_2.11</artifactId>
+            <version>${spark.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.hankcs/hanlp -->
+        <dependency>
+            <groupId>com.hankcs</groupId>
+            <artifactId>hanlp</artifactId>
+            <version>portable-1.6.8</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-mllib -->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-mllib_2.11</artifactId>
+            <version>${spark.version}</version>
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
     <build>

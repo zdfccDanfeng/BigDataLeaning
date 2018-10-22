@@ -5,13 +5,15 @@ package SparkLeanrning.Job;
 
 import org.junit.Test;
 
-public class GroupTestTest {
+import BaseTest.BaseTest;
+
+public class GroupTestTest extends BaseTest {
 
     @Test
     public void testGroup() {
 
         GroupTest groupTest=new GroupTest();
 
-        groupTest.testGroup();
+        groupTest.run(getSparkSession(),null,null);
     }
 }

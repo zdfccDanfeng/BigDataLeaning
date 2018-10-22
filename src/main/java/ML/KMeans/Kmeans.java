@@ -171,7 +171,7 @@ public class Kmeans {
             // 计算和，然后在计算平均值
             int sumrender = 0, sumtongshai = 0, sumwuli = 0, sumzhili = 0, sumjibin = 0, sumnubin = 0, sumqibin = 0, sumpolic = 0, sumqiangbin = 0, sumbinqi = 0, sumtongwu = 0, sumtongzhi = 0, sumtongwuzhi = 0, sumtongwuzhizheng = 0, sumsalary = 0;
             for (int k1 = 0; k1 < size; k1++) {
-                sumsalary += ps.get(k1).getSalary();
+               // sumsalary += ps.get(k1).getSalary();
             }
             // 产生新的聚类，然后加入到聚类数组中
             Cluster newCluster = new Cluster();

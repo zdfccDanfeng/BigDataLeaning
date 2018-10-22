@@ -13,11 +13,15 @@ import org.apache.spark.sql.Row;
 import org.apache.spark.sql.RowFactory;
 import org.apache.spark.sql.SparkSession;
 import org.apache.spark.sql.types.StructType;
+
+import com.baidu.cedp.scp.task.core.api.JobEnvironment;
+import com.baidu.cedp.scp.task.extras.api.SparkSessionJob;
+
 import SparkLeanrning.Utils.ShemaUtils;
 import java8.model.Resource;
 import lombok.extern.slf4j.Slf4j;
 @Slf4j
-public class GroupTest {
+public class GroupTest implements SparkSessionJob<String,String> {
 
     public void testGroup(){
         StructType schema1=ShemaUtils.getDataFrameFromDesc(Arrays.asList("cuid","label","id"));
@@ -36,7 +40,7 @@ public class GroupTest {
         JavaSparkContext javaSparkContext=new JavaSparkContext(sparkSession.sparkContext());
         List<String> cuidList=Arrays.asList("1,2,3,5,6");
         System.out.println(sparkSession);
-        sparkSession.createDataset(cuidList,Encoders.STRING());
+        //sparkSession.createDataset(cuidList,Encoders.STRING());
         JavaRDD<Resource> resourceJavaRDD= javaSparkContext.parallelize(resources);
 //        Dataset<Row> rowDataset=sparkSession.createDataFrame(resourceJavaRDD,Resource.class);
         JavaRDD<Row> rowRDD=javaSparkContext.parallelize(cuidList).map((Function<String, Row>) v1 -> RowFactory.create
@@ -57,4 +61,9 @@ public class GroupTest {
         dataset.join(peopledataset,"cuid").show();
     }
 
+    @Override
+    public String run(SparkSession sparkSession, JobEnvironment jobEnvironment, String s) {
+        testGroup();
+        return "xxxx";
+    }
 }

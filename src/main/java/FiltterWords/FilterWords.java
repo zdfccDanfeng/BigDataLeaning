@@ -3,6 +3,8 @@
  */
 package FiltterWords;
 
+import static FiltterWords.FilterTool.filterTools;
+
 import java.io.File;
 import java.io.IOException;
 import java.text.NumberFormat;
@@ -30,38 +32,58 @@ public class FilterWords {
      *  xx2
      *  xx2dkwek
      *  xx2..we.,xx2
-     *
-     *
-     *
-     *
-     *
-     *
-     *
+
      *
      * @param args
      */
     public static void main(String [] args){
 
-        String content=readfile("/Users/zhangdanfeng01/Desktop/newjia_dian.txt");
-       Collection<String> target= Arrays.stream(content.split("\n")).sorted().distinct().collect(Collectors.toList());
+        String content=readfile("/Users/zhangdanfeng01/Desktop/newjia_dian3.txt");
+         Collection<String> target= Arrays.stream(content.split("\n")).sorted().distinct().collect(Collectors.toList());
         // 基于文本相似性进行过滤
      //   FilterTool<String,String> filterTool=filterTools(target,(s)->s);
         List<Predicate<String>> predicates=new ArrayList<>();
-        FilterTool<String,String> filterTool=FilterTool.filterTools(target,);
-        filterTool.
+       // FilterTool<String,String> filterTool=FilterTool.filterTools(target,);
+       // filterTool.
+        Predicate<String> limnit=s1->s1.length()>=6;
+        Predicate<String> engilsh=k->{
+            String s1= removeSign(k);
+            StringBuilder stringBuilder=new StringBuilder();
+            for (char e:s1.toCharArray()){
+                if((e >= 'a' && e <= 'z')
+                        || (e >= 'A' && e <= 'Z')  || (e >= '0' && e <= '9')){
+                    stringBuilder.append(e);
+                }
+            }
+            return s1.length()>stringBuilder.toString().length();
+        };
+        Predicate<String> ungly=ss->!(ss.contains("#")||ss.contains("$")|| ss.contains("@"));
+        Predicate<String> fff=ss->ss.contains("电视")||ss.contains("冰箱")||ss.contains("洗衣机")
+                ||ss.contains("电")||ss.contains("tv")||ss.contains("洗")||ss.contains("空调")
+                ||ss.contains("电动")||ss.contains("电脑")||ss.contains("手机");
+        predicates.add(limnit);
+       // predicates.add(engilsh);
+
+        predicates.add(ungly);
+        FilterTool<String,String> filterTool=filterTools(target,predicates,k->k.toLowerCase());
+       predicates.add(fff);
+        Collection<String> res=new ArrayList<>();
+        filterTool.filterWithPredicate(res);
+        Collection<String> res1;
+//        res1=res.stream().collect(Collectors.groupingBy(s->s.substring(2))).entrySet().stream().filter(g->g.getValue
+//                ().size()>5).flatMap
+//                (s->s
+//                .getValue()
+//                .subList(s.getValue().size()-5,s.getValue().size()-1).stream()).collect(Collectors.toList());
+//        //随机采样5000个词条。
+        //相似度聚类
+      //  System.out.println(res.stream().count());
+
+        writeToFile("/Users/zhangdanfeng01/Desktop/newjia_dian4.txt",res.stream().reduce((x1,x2)->x1+"\n"+x2).get());
+
     }
 
-    public static Predicate<String> limitPredicate(String s){
-        return s1->s1.length()>=6;
-    }
 
-    public static Predicate<String> limtiEnglish(String s){
-     String s1= removeSign(s);
-     StringBuilder stringBuilder=new StringBuilder();
-     for (char e:s1.toCharArray()){
-
-     }
-    }
     public static String readfile(String path){
         File file =FileUtils.getFile(path);
         try {
@@ -72,6 +94,16 @@ public class FilterWords {
 
         return "";
 
+    }
+
+
+    public static void writeToFile(String path,String data){
+        File file =FileUtils.getFile(path);
+        try {
+            FileUtils.writeStringToFile(file,data,"utf-8");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /*
