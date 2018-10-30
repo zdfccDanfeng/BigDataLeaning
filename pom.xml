@@ -2,7 +2,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.baidu.omni-markting</groupId>
-    <artifactId>omark-launchscreen-spark</artifactId>
+    <artifactId>leanringprjiect</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <url>http://maven.apache.org</url>
@@ -17,7 +17,7 @@
         <release.version>${project.version}</release.version>
         <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ssZ</maven.build.timestamp.format>
         <spark.version>2.2.0.3-baidu-SNAPSHOT</spark.version>
-        <scala.version>2.11.8</scala.version>
+        <scala.version>2.12.6</scala.version>
         <scala.binary.version>2.11</scala.binary.version>
     </properties>
     <profiles>
@@ -178,6 +178,11 @@
             <artifactId>spark-mllib_2.11</artifactId>
             <version>${spark.version}</version>
             <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.51</version>
         </dependency>
     </dependencies>
     <build>

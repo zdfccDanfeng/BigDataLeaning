@@ -16,8 +16,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Learning" />
+        <module name="omark-launchscreen-spark" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="omark-launchscreen-spark" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
